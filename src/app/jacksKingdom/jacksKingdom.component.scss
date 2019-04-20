@@ -1,0 +1,26 @@
+/* The animation code */
+@keyframes slow-zoom {
+    from {
+        width: 100%;
+        height: 100%
+    }
+    to {
+        width: 140%;
+        height: 140%
+    }
+}
+
+#goldilocks {
+    width: 100%;
+}
+  
+/* The element to apply the animation to */
+#goldilocks:hover {
+    animation-name: slow-zoom;
+    animation-duration: 7s;
+    cursor: zoom-in;  
+}
+
+#img-container{
+    width: 500px;
+}
