@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Scene, PerspectiveCamera, TextureLoader, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, Color } from 'three-full'
 import { removeDebugNodeFromIndex } from '@angular/core/src/debug/debug_node';
 
@@ -11,6 +11,9 @@ export class JacksKingdomComponent implements OnInit {
   ngOnInit(): void {
     this.threeJsDemo();
   }
+
+  @ViewChild('audioPlayer')
+  audioPlayer: ElementRef
 
   renderer: WebGLRenderer;
   scene: Scene;
@@ -29,7 +32,7 @@ export class JacksKingdomComponent implements OnInit {
 
     this.renderer = new WebGLRenderer();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(this.renderer.domElement);
+    document.getElementById("div2").appendChild(this.renderer.domElement);
 
     var geometry = new BoxGeometry( 1, 1, 1 );
 
@@ -39,7 +42,7 @@ export class JacksKingdomComponent implements OnInit {
     this.cube = new Mesh( geometry, material );
     this.scene.add( this.cube );
 
-    this.camera.position.z = 5;
+    this.camera.position.z = 2;
     this.animate();
   }
 
