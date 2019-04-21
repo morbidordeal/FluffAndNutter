@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Scene, PerspectiveCamera, TextureLoader, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, Color } from 'three-full'
+import { Scene, PerspectiveCamera, TextureLoader, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, Color } from 'three-full';
 import { removeDebugNodeFromIndex } from '@angular/core/src/debug/debug_node';
 
 @Component({
@@ -13,7 +13,7 @@ export class JacksKingdomComponent implements OnInit {
   }
 
   @ViewChild('audioPlayer')
-  audioPlayer: ElementRef
+  audioPlayer: ElementRef;
 
   renderer: WebGLRenderer;
   scene: Scene;
