@@ -1,0 +1,36 @@
+#monkey-life-container{
+    height: 800px;
+    width: 800px;
+    margin: 20px;
+    color: green;
+}
+
+#game-text-container{
+    margin:25px;
+}
+
+#player-input{
+    background-color: black;
+    color: red;
+}
+
+.flashing{
+    animation-name: flashing;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashing {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    76% {
+        opacity: 0;
+    }
+}

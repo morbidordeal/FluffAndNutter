@@ -1,13 +1,30 @@
 <div id="div2" class="row">
     <h2 class="text-center">
-        Fluff and Nutter
+        WELCOME TO MY KINGDOM
     </h2>
-    <!-- <div id="img-container">
-        <img id="goldilocks" src="../../assets/images/goldilocks.jpg" alt="?">
-    </div> -->
+    <h2 class="text-center">
+        THIS IS A PLACE OF LEARNING
+    </h2>
+    <h2 class="text-center">
+        SOON ALL SHALL BE REVEALED
+    </h2>
+    <br><br><br>
+    <div>
+        <img id="game-zone-banner" src="../../assets/images/banner.jpg" alt="?">
+        <h3 id="game-zone-text" class="text-center">The Game Zone</h3>
+        <h4 class="text-center">Select a Game!</h4>
+    </div>
+    <ul>
+        <div class="game-selection text-center" (click)="selectGame('monkey-life')">
+            Monkey Life
+        </div>
+    </ul>
+    <div id="game-player">
+        <monkey-life *ngIf="selectedGame==='monkey-life'"></monkey-life>
+    </div>
 </div>
 
 <audio #audioPlayer controls autoplay="true" loop>
     <source src="../../assets/audio/hit-or-miss.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+    Your browser does not support the audio element.
 </audio>

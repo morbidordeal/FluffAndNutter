@@ -1,0 +1,14 @@
+<div id="monkey-life-container">
+    <h3 class="text-center">Monkey Life</h3>
+    <div class="game-text-container">
+        <span [innerHtml]="text">
+
+        </span>
+    </div>
+    <div *ngIf="isPrompting">
+        <span class="flashing">
+            >&nbsp;
+        </span>
+        <input id="player-input" spellcheck="false" [(ngModel)]="playerInput" />
+    </div>
+</div>

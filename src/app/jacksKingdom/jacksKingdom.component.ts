@@ -20,6 +20,11 @@ export class JacksKingdomComponent implements OnInit {
   camera: PerspectiveCamera;
   cube: Mesh;
   textureLoader: TextureLoader;
+  selectedGame: string;
+
+  selectGame(selection: string){
+    this.selectedGame = selection;
+  }
 
   threeJsDemo() {
     this.red = 0;
@@ -93,6 +98,4 @@ export class JacksKingdomComponent implements OnInit {
   colorString(color: number){
     return color < 10 ? "0" + color.toString() : color.toString();
   }
-
-  title = 'fluff-and-nutter';
 }

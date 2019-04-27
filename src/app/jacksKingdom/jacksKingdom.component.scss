@@ -24,3 +24,54 @@
 #img-container{
     width: 500px;
 }
+
+#game-player{
+    background-color: black;
+    height: 800px;
+    width: 800px;
+}
+
+#game-zone-banner{
+    width: 100%;
+    height: 40px;
+    opacity: 0.5;
+}
+
+#game-zone-text{
+    position: relative;
+    bottom: 100px;
+    animation-name: change-colors;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    font-weight: bold;
+}
+
+@keyframes change-colors {
+    0% {
+        color: forestgreen;
+    }
+    20% {
+        color: black;
+    }
+    40%{
+        color: purple;
+    }
+    60%{
+        color:red;
+    }
+    80%{
+        color:darkblue;
+    }
+    100%{
+        color: forestgreen;
+    }
+}
+
+.game-selection{
+    width: 150px;
+    border: 2px solid greenyellow;
+    background-color: black;
+}
+.game-selection:hover{
+    background-color: forestgreen;
+}

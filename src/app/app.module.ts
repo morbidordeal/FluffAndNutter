@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { JacksKingdomComponent } from './jacksKingdom/jacksKingdom.component';
 import { JoelsKingdomComponent } from './joelsKingdom/joelsKingdom.component';
 import { BattlegroundComponent } from './battleground/battleground.component';
+import { MonkeyLifeComponent } from './jacksKingdom/monkeyLife/monkeyLife.component';
+import { FormsModule }   from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'joels', component: JoelsKingdomComponent },
@@ -18,11 +20,13 @@ const appRoutes: Routes = [
     AppComponent,
     JacksKingdomComponent,
     JoelsKingdomComponent,
-    BattlegroundComponent
+    BattlegroundComponent,
+    MonkeyLifeComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
