@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Fighter } from '../models/fighter';
+import { Fighter } from '../models';
 
 @Component({
   selector: 'battleground',
