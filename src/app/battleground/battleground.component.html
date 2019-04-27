@@ -1,3 +1,4 @@
-<p>
-  battlegroundComponent works!
-</p>
+<h1>Choose your Fighter</h1>
+<div class="fighter-box" *ngFor="let fighter of fighters">
+  <img class="fighter-face-box" [src]="fighter.src" alt="?" />
+</div>

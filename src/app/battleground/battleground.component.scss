@@ -1,0 +1,17 @@
+.fighter-face-box{
+    height: 150px;
+}
+
+.fighter-face-box:hover{
+    opacity: 0.8;
+}
+
+.fighter-box {
+    display: inline-block;
+    margin: 3px;
+    border: 2px double black;
+}
+
+.fighter-box:hover {
+    border: 2px double lightgoldenrodyellow;
+}
