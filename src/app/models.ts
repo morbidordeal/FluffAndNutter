@@ -1,4 +1,4 @@
-import { Relation, Sex } from './enums';
+import { Relation, Sex, SocialStatus } from './enums';
 
 export interface Fighter {
     src: string;
@@ -9,4 +9,5 @@ export interface Monkey {
     age: number;
     sex: Sex;
     relation: Relation;
+    socialStatus: SocialStatus;
 }
