@@ -1,0 +1,10 @@
+<div id="magi-imperium-container">
+    &nbsp;
+</div>
+
+
+<h1 class="header-text flashing text-center">{{headerText}}</h1>
+<div *ngFor="let class of classes" class="magical">
+    <img [src]="class.src">
+    <span>{{class.name}}</span>
+</div>

@@ -68,7 +68,9 @@
 }
 
 .game-selection{
+    width: 200px;
     width: 150px;
+    display: inline-block;
     border: 2px solid greenyellow;
     background-color: black;
 }
@@ -78,4 +80,24 @@
 
 .div-center {
     margin: 0 auto;
+}
+
+#background{
+    position: absolute;
+    top: 470px;
+    left: 0;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+    width: -webkit-fill-available;
+}
+
+#div2{
+    position: relative;
+    z-index: 33;
+}
+
+.header-text{
+    color: red;
+    font-family: retro;
 }

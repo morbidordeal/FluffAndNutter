@@ -1,3 +1,4 @@
+<img id="background" src="../../assets/images/alice-in-wonderland.png" alt="?">
 <div id="div2" class="row">
     <h2 class="text-center">
         WELCOME TO MY KINGDOM
@@ -18,13 +19,19 @@
         <div class="game-selection text-center" (click)="selectGame('monkey-life')">
             Monkey Life
         </div>
+        <div class="game-selection text-center" (click)="selectGame('magi-imperium')">
+            Magi Imperium
+        </div>
     </ul>
     <div id="game-player" class="div-center">
+        
+        <h1 class="header-text flashing text-center" *ngIf="!selectedGame">Insert coin to continue</h1>
         <monkey-life *ngIf="selectedGame==='monkey-life'"></monkey-life>
+        <magi-imperium *ngIf="selectedGame==='magi-imperium'"></magi-imperium>
     </div>
 </div>
 
-<audio #audioPlayer controls autoplay="true" loop>
+<audio #audioPlayer controls loop>
     <source src="../../assets/audio/hit-or-miss.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
