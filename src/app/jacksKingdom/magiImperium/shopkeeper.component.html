@@ -1,8 +1,9 @@
 <div id="shop" class="center-block magical">
     <div>
         <img id="shopkeeper-image" [src]="'../../../assets/images/' + shopkeeper.src" class="center-block">
-        <div class="text-center" [style.color]="shopkeeper.textColor">{{shopkeeper.name}}</div>
+        <div id="shopkeeper-name" class="text-center" [style.color]="shopkeeper.textColor">{{shopkeeper.name}}</div>
     </div>
+    <br><br>
         <div id="item-selection">
             <!-- Shop Item -->
             <div class="shop-item-box"
@@ -16,7 +17,7 @@
             </div>
         </div>
         
-        <div id="shop-dialogue" class="magical" [style.color]="textColor">
+        <div id="shop-dialogue" class="magical text-center" [style.color]="textColor">
             {{dialogue}}
         </div>
         
