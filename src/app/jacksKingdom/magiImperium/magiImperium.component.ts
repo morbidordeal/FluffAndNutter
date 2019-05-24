@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MagiType } from './enums';
+import { Player } from './models';
 
 @Component({
     selector: 'magi-imperium',
@@ -35,17 +36,37 @@ export class MagiImperiumComponent implements OnInit {
 
     selectCharacter(){
         this.isSelected = true;
+        this.player = {
+            name: "",
+            magiType: this.selectedCharacter.name,
+            hp: 100,
+            mp: 100,
+            intelligence: 20,
+            spirit: 20,
+            src: this.selectedCharacter.src,
+            faceSrc: this.selectedCharacter.faceSrc
+        }
+        setTimeout(()=>{
+            this.stage = 'char-info';
+        }, 2000);
     }
 
     onImageLoad(name: MagiType){
         this.selectedName = name;
     }
 
+    enterName(){
+        this.player.name = this.playerName;
+    }
+
+    player: Player;
     selectedName: MagiType;
     headerText: string;
     subHeaderText: string;
     selectedCharacter: any;
     isSelected: boolean = false;
+    stage: string = 'char-select';
+    playerName: string = "";
     classes: any[] = [{
         name: MagiType.Wizard,
         description: "A student of the ways of magic and power, eternal seeker of greater glories.",

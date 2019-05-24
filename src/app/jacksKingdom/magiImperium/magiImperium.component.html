@@ -3,9 +3,10 @@
 </div>
 <div id="magi-imperium-container">
     <h1 class="header-text flashing text-center">{{headerText}}</h1>
-    <h3 class="header-text flashing text-center">{{subHeaderText}}</h3>
+    <h3  *ngIf="stage === 'char-select'" class="header-text flashing text-center">{{subHeaderText}}</h3>
 
-    <div id="character-select">
+    <!-- Select Character -->
+    <div id="character-select" *ngIf="stage === 'char-select'">
         <h5 class="header-text">Welcome, brave magi. Choose your path of attainment:</h5>
         <div class="center-block">
             <div *ngFor="let class of classes" class="character-select-box magical text-center" (click)="select(class)"
@@ -33,5 +34,17 @@
             [class.btn-default]="isSelected"
             [class.btn-primary]="!isSelected">Select</button>
         </div>
+    </div>
+
+    <!-- Enter Character Info -->
+    <div id="character-info-form" *ngIf="stage === 'char-info'">
+        <!-- Enter Name -->
+        <div *ngIf="!player.name">
+            <h5 class="magical">What is your name, brave magi?</h5>
+            <input [(ngModel)]="playerName">
+            <button (click)="enterName()">Enter</button>
+        </div>
+        
+        <player-info [player]="player"></player-info>
     </div>
 </div>

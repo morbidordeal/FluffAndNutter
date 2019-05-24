@@ -1,0 +1,15 @@
+<div id="player-info-box" class="magical">
+    <div class="text-center" [style.text-decoration]="'underline'">{{player.name}}</div>
+    <div class="text-center">{{player.magiType}}</div>
+    <img [src]="player.faceSrc">
+    <div class="red">
+        <img class="icon" src="../../../assets/images/icon-hp.png">
+        HP: {{calculateHP()}}
+    </div>
+    <div class="blue">
+        <img class="icon" src="../../../assets/images/icon-mp.png">
+        MP: {{calculateMP()}}
+    </div>
+    <div class="text-center">Intelligence: {{calculateIntelligence()}}</div>
+    <div class="text-center">Spirit: {{calculateSpirit()}}</div>
+</div>
