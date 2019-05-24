@@ -8,22 +8,26 @@
     <div id="character-select">
         <h5 class="header-text">Welcome, brave magi. Choose your path of attainment:</h5>
         <div class="center-block">
-            <div *ngFor="let class of classes" class="character-select-box magical" (click)="select(class)"
+            <div *ngFor="let class of classes" class="character-select-box magical text-center" (click)="select(class)"
             [class.flashing]="selectedCharacter && selectedCharacter.name === class.name">
                 <img [src]="class.faceSrc" class="face-img" alt="?">
-                <span>{{class.name}}</span>
+                <span class="character-select-text">{{class.name}}</span>
             </div>
         </div>
 
         <div id="character-preview" class="magical" *ngIf="selectedCharacter">
             <img class="center-block" [src]="selectedCharacter.src" alt="?"
-            [class.flash]="isSelected">
-            <div class="text-center">
-                {{selectedCharacter.description}}
+            [class.flash]="isSelected"
+            (load)="onImageLoad(selectedCharacter.name)">
+            <div *ngIf="selectedCharacter.name === selectedName">
+                <div class="text-center">
+                    {{selectedCharacter.description}}
+                </div>
+                <div class="text-center" [style.color]="'green'" *ngFor="let perk of selectedCharacter.perks">
+                    {{perk}}
+                </div>
             </div>
-            <div class="text-center" [style.color]="'green'" *ngFor="let perk of selectedCharacter.perks">
-                {{perk}}
-            </div>
+            
             <button class="magical btn center-block"
             (click)="selectCharacter()"
             [class.btn-default]="isSelected"

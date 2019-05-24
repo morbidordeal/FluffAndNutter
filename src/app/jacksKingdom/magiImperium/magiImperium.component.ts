@@ -37,6 +37,11 @@ export class MagiImperiumComponent implements OnInit {
         this.isSelected = true;
     }
 
+    onImageLoad(name: MagiType){
+        this.selectedName = name;
+    }
+
+    selectedName: MagiType;
     headerText: string;
     subHeaderText: string;
     selectedCharacter: any;
