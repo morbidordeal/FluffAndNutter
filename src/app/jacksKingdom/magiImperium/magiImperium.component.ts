@@ -48,7 +48,7 @@ export class MagiImperiumComponent implements OnInit {
         }
         setTimeout(()=>{
             this.stage = 'char-info';
-        }, 2000);
+        }, 1200);
     }
 
     onImageLoad(name: MagiType){
@@ -59,6 +59,11 @@ export class MagiImperiumComponent implements OnInit {
         this.player.name = this.playerName;
     }
 
+    finishIntro(){
+        this.introFinished = true;
+    }
+
+    introFinished: boolean = false;
     player: Player;
     selectedName: MagiType;
     headerText: string;
@@ -67,6 +72,12 @@ export class MagiImperiumComponent implements OnInit {
     isSelected: boolean = false;
     stage: string = 'char-select';
     playerName: string = "";
+    dialogue: string[] = [
+        "In a long-forgotten timeline, there was the enchanted world of Alathema.",
+        "Alathema was a world of primitive technology, and advanced magical arts. Here, the magi roamed the landscape, in quest of domination of the natural order, and each other.",
+        "Great lumbering beasts, demonic hosts, and skilled lords of old, all of these you will face with your magical might",
+        "Enter the Imperium of the Magi, and claim your destiny!!"
+    ];
     classes: any[] = [{
         name: MagiType.Wizard,
         description: "A student of the ways of magic and power, eternal seeker of greater glories.",

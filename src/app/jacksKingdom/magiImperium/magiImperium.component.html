@@ -39,12 +39,16 @@
     <!-- Enter Character Info -->
     <div id="character-info-form" *ngIf="stage === 'char-info'">
         <!-- Enter Name -->
-        <div *ngIf="!player.name">
-            <h5 class="magical">What is your name, brave magi?</h5>
-            <input [(ngModel)]="playerName">
+        <div class="magical" *ngIf="!player.name">
+            <h5>What is your name, brave magi?</h5>
+            <input [(ngModel)]="playerName" spellcheck="false" autocomplete="off">
             <button (click)="enterName()">Enter</button>
         </div>
-        
-        <player-info [player]="player"></player-info>
+        <div class="inline-block">
+            <player-info [player]="player"></player-info>
+        </div>
+        <div class="inline-block">
+            <story *ngIf="player.name && !introFinished" [dialogue]="dialogue" (finished)="finishIntro()"></story>
+        </div>
     </div>
 </div>
