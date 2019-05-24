@@ -7,3 +7,10 @@ export enum MagiType {
     Seer = "Seer",
     Shaman = "Shaman"
 }
+
+export enum ItemType {
+    Artifact,
+    Weapon,
+    Garment,
+    Consumable
+}

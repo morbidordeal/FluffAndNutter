@@ -11,6 +11,7 @@ import { FormsModule }   from '@angular/forms';
 import { MagiImperiumComponent } from './jacksKingdom/magiImperium/magiImperium.component';
 import { PlayerInfoComponent } from './jacksKingdom/magiImperium/playerInfo.component';
 import { StoryComponent } from './jacksKingdom/magiImperium/story.component';
+import { ShopkeeperComponent } from './jacksKingdom/magiImperium/shopkeeper.component';
 
 const appRoutes: Routes = [
   { path: 'joels', component: JoelsKingdomComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     MonkeyLifeComponent,
     MagiImperiumComponent,
     PlayerInfoComponent,
-    StoryComponent
+    StoryComponent,
+    ShopkeeperComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

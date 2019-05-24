@@ -1,0 +1,27 @@
+<div id="shop" class="center-block magical">
+    <div>
+        <img id="shopkeeper-image" [src]="'../../../assets/images/' + shopkeeper.src" class="center-block">
+        <div class="text-center">{{shopkeeper.name}}</div>
+    </div>
+        <div id="item-selection">
+            <!-- Shop Item -->
+            <div class="shop-item-box"
+                    *ngFor="let item of shopkeeper.items"
+                    (click)="selectItem(item)"
+                    [class.selected]="selectedItem && selectedItem.name === item.name">
+        
+                {{item.name}}
+                <img class="shop-item-image center-block" [src]="'../../../assets/images/' + item.src">
+                Cost: {{item.cost}} gold
+            </div>
+        </div>
+        
+        <div id="shop-dialogue" class="magical">
+            {{dialogue}}
+        </div>
+        
+        <div id="player-choices">
+            <button (click)="purchase()">Purchase</button>
+            <button (click)="leave()">Leave</button>
+        </div>
+</div>

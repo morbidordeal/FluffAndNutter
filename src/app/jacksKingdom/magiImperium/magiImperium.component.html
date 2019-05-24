@@ -50,5 +50,8 @@
         <div class="inline-block">
             <story *ngIf="player.name && !introFinished" [dialogue]="dialogue" (finished)="finishIntro()"></story>
         </div>
+
+        <!-- Testing Shopkeeper Component... -->
+        <shopkeeper *ngIf="player.name && introFinished" [shopkeeper]="forestMan" [player]="player"></shopkeeper>
     </div>
 </div>
