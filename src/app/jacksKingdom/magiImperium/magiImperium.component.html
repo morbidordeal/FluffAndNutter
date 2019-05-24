@@ -1,10 +1,33 @@
-<div id="magi-imperium-container">
+<div>
     &nbsp;
 </div>
+<div id="magi-imperium-container">
+    <h1 class="header-text flashing text-center">{{headerText}}</h1>
+    <h3 class="header-text flashing text-center">{{subHeaderText}}</h3>
 
+    <div id="character-select">
+        <h5 class="header-text">Welcome, brave magi. Choose your path of attainment:</h5>
+        <div class="center-block">
+            <div *ngFor="let class of classes" class="character-select-box magical" (click)="select(class)"
+            [class.flashing]="selectedCharacter && selectedCharacter.name === class.name">
+                <img [src]="class.faceSrc" class="face-img" alt="?">
+                <span>{{class.name}}</span>
+            </div>
+        </div>
 
-<h1 class="header-text flashing text-center">{{headerText}}</h1>
-<div *ngFor="let class of classes" class="magical">
-    <img [src]="class.src">
-    <span>{{class.name}}</span>
+        <div id="character-preview" class="magical" *ngIf="selectedCharacter">
+            <img class="center-block" [src]="selectedCharacter.src" alt="?"
+            [class.flash]="isSelected">
+            <div class="text-center">
+                {{selectedCharacter.description}}
+            </div>
+            <div class="text-center" [style.color]="'green'" *ngFor="let perk of selectedCharacter.perks">
+                {{perk}}
+            </div>
+            <button class="magical btn center-block"
+            (click)="selectCharacter()"
+            [class.btn-default]="isSelected"
+            [class.btn-primary]="!isSelected">Select</button>
+        </div>
+    </div>
 </div>

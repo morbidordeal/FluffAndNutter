@@ -2,3 +2,50 @@
     color: lightblue;
     font-family: retro;
 }
+
+.character-select-box{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 3px solid lightpink;
+    margin: 5px;
+}
+
+.character-select-box:hover {
+    opacity: 0.8;
+    border-color: white;
+}
+
+.face-img{
+    max-width: 95px;
+}
+
+#magi-imperium-container{
+    font-size: 16px;
+}
+
+#character-select{
+    margin-top: 45px;
+}
+
+.flashing-border{
+    border: 2px solid purple;
+    animation-name: flashing-border;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashing-border {
+    0% {
+        border: 2px solid purple;
+    }
+    25% {
+        border: 2px solid black;
+    }
+    75% {
+        border: 2px solid black;
+    }
+    76% {
+        border: 2px solid purple;
+    }
+}
