@@ -12,15 +12,17 @@
 }
 
 .shop-item-image {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 
 .shop-item-box{
-    width: 150px;
+    width: 130px;
     height: 150px;
     display: inline-block;
     border: 1px solid grey;
+    margin: 5px;
+    padding: 5px;
 }
 
 .shop-item-box:hover{
