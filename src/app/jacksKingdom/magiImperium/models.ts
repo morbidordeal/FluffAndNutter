@@ -18,6 +18,7 @@ export class ShopKeeper {
     goodbye: string;
     items: ShopItem[];
     src: string;
+    textColor: string;
 }
 
 export class ShopItem {

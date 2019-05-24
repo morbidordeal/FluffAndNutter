@@ -8,6 +8,7 @@ import { ShopKeeper, ShopItem, Player } from './models';
 })
 export class ShopkeeperComponent implements OnInit {
     ngOnInit(): void {
+        this.textColor = this.shopkeeper.textColor;
         this.dialogue = this.shopkeeper.greeting;
     }
 
@@ -19,12 +20,15 @@ export class ShopkeeperComponent implements OnInit {
 
     dialogue: string;
     selectedItem: ShopItem
+    textColor: string = "white";
 
     selectItem(item: ShopItem){
         this.selectedItem = item;
     }
 
     purchase() {
+        this.textColor = "white";
+
         if (!this.selectedItem) {
             this.dialogue = "You haven't selected an item to purchase!"
         }
@@ -40,6 +44,7 @@ export class ShopkeeperComponent implements OnInit {
     }
 
     leave(){
+        this.textColor = this.shopkeeper.textColor;
         this.dialogue = this.shopkeeper.goodbye;
     }
 }

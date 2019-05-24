@@ -22,7 +22,8 @@ export const forestMan: ShopKeeper = {
     items: [
         potion, tatteredRobe
     ],
-    src: "shopkeeper-belthus.jpg"
+    src: "shopkeeper-belthus.jpg",
+    textColor: "green"
 }
 
 export const classes: any[] = [{
