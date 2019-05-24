@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShopKeeper, ShopItem, Player } from './models';
+import { ShopKeeper, Item, Player } from './models';
 
 @Component({
     selector: 'shopkeeper',
@@ -19,10 +19,10 @@ export class ShopkeeperComponent implements OnInit {
     player: Player;
 
     dialogue: string;
-    selectedItem: ShopItem
+    selectedItem: Item
     textColor: string = "white";
 
-    selectItem(item: ShopItem){
+    selectItem(item: Item){
         this.selectedItem = item;
     }
 
@@ -35,6 +35,7 @@ export class ShopkeeperComponent implements OnInit {
         else if (this.player.gold >= this.selectedItem.cost) {
             this.dialogue = `You purchased ${this.selectedItem.name} for ${this.selectedItem.cost} gold!`;
             this.player.gold -= this.selectedItem.cost;
+            this.player.inventory.push(this.selectedItem);
         }
         else {
             this.dialogue = `You do not have enough gold to purchase the ${this.selectedItem.name}!`

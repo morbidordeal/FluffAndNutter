@@ -12,6 +12,7 @@ import { MagiImperiumComponent } from './jacksKingdom/magiImperium/magiImperium.
 import { PlayerInfoComponent } from './jacksKingdom/magiImperium/playerInfo.component';
 import { StoryComponent } from './jacksKingdom/magiImperium/story.component';
 import { ShopkeeperComponent } from './jacksKingdom/magiImperium/shopkeeper.component';
+import { InventoryComponent } from './jacksKingdom/magiImperium/inventory.component';
 
 const appRoutes: Routes = [
   { path: 'joels', component: JoelsKingdomComponent },
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     MagiImperiumComponent,
     PlayerInfoComponent,
     StoryComponent,
-    ShopkeeperComponent
+    ShopkeeperComponent,
+    InventoryComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

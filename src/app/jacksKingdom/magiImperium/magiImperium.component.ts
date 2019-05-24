@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MagiType } from './enums';
-import { Player, ShopKeeper } from './models';
+import { Player, ShopKeeper, Item } from './models';
 import { forestMan, classes } from './gameData';
+import { calculateMaxHP, calculateMaxMP } from './utils';
 
 @Component({
     selector: 'magi-imperium',
@@ -41,13 +42,21 @@ export class MagiImperiumComponent implements OnInit {
             name: "",
             magiType: this.selectedCharacter.name,
             hp: 100,
+            maxHp: 100,
             mp: 100,
+            maxMp: 100,
             intelligence: 20,
             spirit: 20,
             src: this.selectedCharacter.src,
             faceSrc: this.selectedCharacter.faceSrc,
-            gold: 200
-        }
+            gold: 200,
+            inventory: []
+        };
+        this.player.maxHp = calculateMaxHP(this.player);
+        this.player.maxMp = calculateMaxMP(this.player);
+        this.player.hp = this.player.maxHp;
+        this.player.mp = this.player.maxMp;
+
         setTimeout(()=>{
             this.stage = 'char-info';
         }, 1200);

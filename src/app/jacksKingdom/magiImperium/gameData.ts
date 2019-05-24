@@ -1,18 +1,25 @@
-import { ShopKeeper, ShopItem } from './models';
+import { ShopKeeper, Item, Player } from './models';
 import { ItemType, MagiType } from './enums';
+import { heal } from './utils';
 
-export const potion: ShopItem = {
+export const potion: Item = {
     name: "Potion",
     itemType: ItemType.Consumable,
     cost: 10,
-    src: "item-potion.jpg"
+    src: "item-potion.jpg",
+    description: "A delicious potion (+10 HP)",
+    consumeEffect: (player: Player) => {heal(player,10);},
+    equipEffect: null
 };
 
-export const tatteredRobe: ShopItem = {
+export const tatteredRobe: Item = {
     name: "Tattered Robe",
     itemType: ItemType.Garment,
     cost: 75,
-    src: "item-tattered-robe.jpg"
+    src: "item-tattered-robe.jpg",
+    description: "The tattered old robes of a forgotten beggar (+5 Max HP)",
+    consumeEffect: null,
+    equipEffect: (player: Player) => {player.maxHp += 5}
 };
 
 export const forestMan: ShopKeeper = {
